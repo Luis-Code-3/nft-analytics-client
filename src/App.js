@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, Navigate, Link, Outlet } from 'react-router-dom';
+import { Route, Routes, useNavigate, Link, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import TrendingCollectionsPage from './pages/TrendingCollectionsPage';
@@ -16,7 +16,7 @@ import EditProfilePage from './pages/EditProfilePage';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Navbar/>
       <Routes>
         <Route path='/' element={<HomePage/>} />
@@ -28,7 +28,7 @@ function App() {
         <Route path='/collection-details/:collectionId/top-sales' element={<CollectionDetailsPage/>} />
         <Route path='/collection-details/:collectionId/analytics' element={<CollectionDetailsPage/>} />
 
-        <Route path='/nft-details/:nftId' element={<NftDetailsPage/>} />
+        <Route path='/nft-details/:collectionId/:nftId' element={<NftDetailsPage/>} />
         <Route path='/blog' element={<BlogPage/>} />
         <Route path='/edit-post' element={<EditPostPage/>} />
         

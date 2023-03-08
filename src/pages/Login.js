@@ -32,8 +32,8 @@ function Login() {
     }
 
     return (
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className="signupContainer">
+        <form className="signupForm" onSubmit={handleSubmit}>
 
             <input type='text' name="username" value={thisUser.username} placeholder='Username' onChange={handleChange}></input>
 

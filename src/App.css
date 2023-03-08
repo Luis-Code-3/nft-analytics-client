@@ -1,0 +1,328 @@
+.app {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: #A3A6A8;
+}
+
+
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.8%;
+  height: 10vh;
+  border-bottom: 2px solid #2e3031;
+  overflow: hidden;
+  padding-right: 3%;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+.navbarContainer img {
+  height: 150%;
+}
+
+.searchBar {
+  flex-grow: 1;
+}
+
+.regLinks {
+  padding: .8% 1%;
+  border-radius: 8px;
+  transition: all .1s linear;
+}
+
+.regLinks:hover {
+  color: #F2F5F8;
+  background-color: #464749;
+}
+
+.specLinks {
+  padding: .8% 1%;
+  border-radius: 8px;
+  transition: all .1s linear;
+  background-color: #d47ee7;
+  color: white;
+}
+
+.specLinks:hover {
+  background-color: #a864b8;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  width: 100%;
+  height: 30vh;
+  border-top: 2px solid #2e3031;
+  padding-top: 3%;
+  overflow: hidden;
+  transition: all .1s linear;
+}
+
+.footerContainer a:hover {
+  color: #F2F5F8;
+}
+
+.footerProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+}
+
+.footerFollow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -15%;
+}
+
+.footerRoutes {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  width: 18%;
+}
+
+.footerNews {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  width: 18%;
+}
+
+.footerResources {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  width: 18%;
+}
+
+.footerTools {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  width: 18%;
+}
+
+.footerProfile img {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: -27%;
+}
+
+/* SIGNUP */
+
+.signupContainer {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #131216;
+  border-radius: 10px;
+  width: 40%;
+  height: 60%;
+}
+
+.signupForm input {
+  width: 80%;
+  height: 12%;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.signupForm button {
+  width: 80%;
+  height: 15%;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  color: white;
+  background-color: #d47ee7;
+  font-weight: 700;
+  transition: all .1s linear;
+}
+
+.signupForm button:hover {
+  background-color: #a864b8;
+}
+
+
+
+/* TRENDING COLLECTIONS PAGE & COMPONENT BIG */
+
+.trendingHeader{
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7%;
+}
+
+.bySalesBig {
+  color: #d47ee7;
+}
+
+.trendingHeader p {
+  color: #A3A6A8;;
+}
+
+.timeBoxBig {
+  background-color: #171819;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+  width: 30%;
+  height: 8vh;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.timeBoxBig button {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  color: #A3A6A8;;
+  width: 15%;
+  height: 60%;
+  font-size: 100%;
+  transition: all .1s linear;
+}
+
+.timeBoxBig button:hover {
+  background-color: #303132;
+  border: 1px solid rgb(68, 205, 255);
+  color: #e8ebec;;
+}
+
+.analyticsBigContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 90%;
+  /* border: 2px solid white; */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+
+.usdBig {
+  font-size: 115%;
+  color: #60CD85;
+}
+
+.supplyBig {
+  font-size: 100%;
+  color: #A3A6A8;
+}
+
+.infoRowBig {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #292A2B;
+  height: 6vh;
+  font-size: 85%;
+  border-top-right-radius: 10px;
+}
+
+.collectionInfoBig {
+  width: 30%;
+  height: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #F2F5F8;
+  font-weight: 600;
+  transition: all .1s linear;
+  padding-left: 1%;
+}
+
+.infoBig {
+  width: 14%;
+  height: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #F2F5F8;
+  font-weight: 600;
+  transition: all .1s linear;
+}
+
+.collectionInfoBig:hover,
+.infoBig:hover {
+  background-color: #464749;
+}
+
+.analyticsBigRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  border-top: 2px solid #2e3031;
+  background-color: #171819;
+  transition: all .1s linear;
+}
+
+.analyticsBigRow:hover {
+  background-color: #222425;
+}
+
+.analyticsStartBig img {
+  width: 20%;
+  height: 60%;
+  margin-left: 5%;
+}
+
+.analyticsStartBig {
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  width: 30%;
+}
+
+.nameAndSupplyBig {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.analyticsFloorPriceBig {
+  width: 14%;
+}
+
+.analyticsAverageBig {
+  width: 14%;
+}
+
+.analyticsVolumeBig {
+  width: 14%;
+}
+
+.analyticsCapBig {
+  width: 14%;
+}
+
+.salesBig {
+  width: 14%;
+}
