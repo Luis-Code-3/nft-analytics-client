@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ethLogo from "../images/EthLogo.png"
+import { baseUrl } from "../services/baseUrl";
 
 function TopSalesBig() {
 
@@ -15,7 +17,7 @@ function TopSalesBig() {
     useEffect(() => {
 
         if(!allSaleHour) {
-          axios.get('/sales-all-collections/hour')
+          axios.get(`${baseUrl}/sales-all-collections/hour`)
           .then((response) => {
             setAllSaleHour(response.data)
           })
@@ -40,11 +42,9 @@ function TopSalesBig() {
 
         <div className="infoRowBig">
           <button className="collectionInfoBig">NFT ITEM</button>
-          <button className="infoBig">TIME</button>
-          <button className="infoBig">PRICE</button>
-          <button className="infoBig">TRANSFER</button>
-          <button className="infoBig">TX HASH</button>
-          <button className="infoBig">MARKET CAP</button>
+          <button className="salesInfoBig">PRICE</button>
+          <button className="salesInfoBig">TIME</button>
+          <button className="salesInfoBig transferInfoBig">TRANSFER</button>
         </div>
         {
           allSaleHour ?
@@ -53,7 +53,7 @@ function TopSalesBig() {
               return (
                 <Link to={`/nft-details/${sale.collectionAddress}/${sale.tokenId}`} key={sale._id}>
 
-                <div className="analyticsBigRow">
+                <div className="salesBigRow">
                   <div className="analyticsStartBig">
                     <img src={sale.nftTokenObject.imageUrl} alt='collection logo'/>
                     <div className="nameAndSupplyBig">
@@ -61,26 +61,19 @@ function TopSalesBig() {
                       <h2 className="supplyBig">#{sale.tokenId}</h2>
                     </div>
                   </div>
-                  <div className="analyticsFloorPriceBig">
-                    <h2>{sale.tokenName}</h2>
-                    <h2 className="usdBig">${sale.tokenId}</h2>
+                  <div className="salesPriceBig">
+                    <div className="ethSalePriceBig">
+                        <img className="ethLogo" src={ethLogo} alt="eth logo"/>
+                        <h2>{sale.salePriceEth.toFixed(2)}</h2>
+                    </div>
+                    <h2 className="usdBig">${sale.salePriceUSD}</h2>
                   </div>
 
-                  <h2 className="salesBig">{sale.transactionTimeStamp}</h2>
+                  <h2 className="salesTimeBig">{sale.transactionTimeStamp}</h2>
 
-                  <div className="analyticsAverageBig">
-                    <h2>{sale.salePriceUsd}</h2>
-                    <h2 className="usdBig">${sale.salePriceEth}</h2>
-                  </div>
-
-                  <div className="analyticsVolumeBig">
-                    <h2>{sale.seller}</h2>
-                    <h2 className="usdBig">{sale.buyer}</h2>
-                  </div>
-
-                  <div className="analyticsCapBig">
-                    <h2>{sale.transactionHash}</h2>
-                    <h2 className="usdBig">{sale.transactionHash}</h2>
+                  <div className="salesTransferBig">
+                    <h2 className="buyerBig"><span className="sellerTextBig">SELLER:</span> {sale.seller}</h2>
+                    <h2 className="buyerBig"><span className="buyerTextBig">BUYER:</span> {sale.buyer}</h2>
                   </div>
                 </div>
                 </Link>

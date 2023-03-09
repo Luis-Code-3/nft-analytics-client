@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ethLogo from "../images/EthLogo.png"
+import { baseUrl } from "../services/baseUrl";
 
 function AnalyticsBig() {
 
@@ -12,20 +14,20 @@ function AnalyticsBig() {
 
 
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //   if(!allCollectionHour) {
-    //     axios.get('http://localhost:4000/all-collection-analytics/oneDay')
-    //     .then((response) => {
-    //       //console.log(response);
-    //       setAllCollectionHour(response.data)
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     })
-    //   }
+      if(!allCollectionHour) {
+        axios.get(`${baseUrl}/all-collection-analytics/oneDay`)
+        .then((response) => {
+          //console.log(response);
+          setAllCollectionHour(response.data)
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+      }
 
-    // }, [])
+    }, [])
 
 
     return (
@@ -63,24 +65,36 @@ function AnalyticsBig() {
                     </div>
                   </div>
                   <div className="analyticsFloorPriceBig">
-                    <h2>{collection.floorPrice}</h2>
+                    <div className="ethSalePriceBig">
+                      <img className="ethLogoTwo" src={ethLogo} alt="eth logo"/>
+                      <h2>{collection.floorPrice}</h2>
+                    </div>
                     <h2 className="usdBig">${collection.floorPriceUSD}</h2>
                   </div>
 
                   <h2 className="salesBig">{collection.totalSales}</h2>
 
                   <div className="analyticsAverageBig">
-                    <h2>{collection.averageSalePriceEth}</h2>
+                    <div className="ethSalePriceBig">
+                      <img className="ethLogoTwo" src={ethLogo} alt="eth logo"/>
+                      <h2>{collection.averageSalePriceEth}</h2>
+                    </div>
                     <h2 className="usdBig">${collection.averageSalePriceUsd}</h2>
                   </div>
 
                   <div className="analyticsVolumeBig">
-                    <h2>{collection.volumeEth}</h2>
+                    <div className="ethSalePriceBig">
+                      <img className="ethLogoTwo" src={ethLogo} alt="eth logo"/>
+                      <h2>{collection.volumeEth}</h2>
+                    </div>
                     <h2 className="usdBig">${collection.volumeUsd.toFixed(2)}</h2>
                   </div>
 
                   <div className="analyticsCapBig">
-                    <h2>{collection.marketCapEth}</h2>
+                    <div className="ethSalePriceBig">
+                      <img className="ethLogoTwo" src={ethLogo} alt="eth logo"/>
+                      <h2>{collection.marketCapEth}</h2>
+                    </div>
                     <h2 className="usdBig">${collection.marketCapUsd}</h2>
                   </div>
                 </div>
