@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, useNavigate, Link, Outlet } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import TrendingCollectionsPage from './pages/TrendingCollectionsPage';

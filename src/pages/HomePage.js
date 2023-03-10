@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import AnalyticsSmall from "../components/AnalyticsSmall";
 import TopSalesSmall from "../components/TopSalesSmall";
-import axios from "axios";
 import homeImage from "../images/homeImage.png"
 
 function HomePage() {

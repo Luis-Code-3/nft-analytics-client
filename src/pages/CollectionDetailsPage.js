@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
-import CollectionDetailsBlock from "../components/CollectionDetailsBlock";
-import CollectionTopSales from "../components/CollectionTopSales";
-import CollectionAllTokens from "../components/CollectionAllTokens";
-import CollectionAnalyticsBlock from "../components/CollectionAnalyticsBlock";
 import CollectionBottomBlock from "../components/CollectionBottonBlock";
 import { baseUrl } from "../services/baseUrl";
 import axios from "axios";
