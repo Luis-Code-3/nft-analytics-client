@@ -13,7 +13,8 @@ function TopSalesSmall() {
         axios.get(`${baseUrl}/sales-all-collections/thirtyMinutes`)
           .then((response) => {
             //console.log(response.data);
-            setAllSaleData(response.data)
+            let newArr = response.data.slice(0,8)
+            setAllSaleData(newArr)
             setCurrentFrame('30m')
           })
           .catch((err) => {
@@ -26,7 +27,8 @@ function TopSalesSmall() {
         axios.get(`${baseUrl}/sales-all-collections/hour`)
           .then((response) => {
             //console.log(response.data);
-            setAllSaleData(response.data)
+            let newArr = response.data.slice(0,8)
+            setAllSaleData(newArr)
             setCurrentFrame('1h')
           })
           .catch((err) => {
@@ -39,7 +41,8 @@ function TopSalesSmall() {
         axios.get(`${baseUrl}/sales-all-collections/oneDay`)
           .then((response) => {
             //console.log(response.data);
-            setAllSaleData(response.data)
+            let newArr = response.data.slice(0,8)
+            setAllSaleData(newArr)
             setCurrentFrame('24h')
           })
           .catch((err) => {
@@ -52,7 +55,8 @@ function TopSalesSmall() {
         axios.get(`${baseUrl}/sales-all-collections/threeDay`)
           .then((response) => {
             //console.log(response.data);
-            setAllSaleData(response.data)
+            let newArr = response.data.slice(0,8)
+            setAllSaleData(newArr)
             setCurrentFrame('3d')
           })
           .catch((err) => {
@@ -65,7 +69,8 @@ function TopSalesSmall() {
         axios.get(`${baseUrl}/sales-all-collections/sevenDay`)
           .then((response) => {
             //console.log(response.data);
-            setAllSaleData(response.data)
+            let newArr = response.data.slice(0,8)
+            setAllSaleData(newArr)
             setCurrentFrame('7d')
           })
           .catch((err) => {
