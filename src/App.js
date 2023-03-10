@@ -9,10 +9,7 @@ import CollectionDetailsPage from './pages/CollectionDetailsPage';
 import NftDetailsPage from './pages/NftDetailsPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Profile from './pages/Profile';
-import BlogPage from './pages/BlogPage';
-import EditPostPage from './pages/EditPostPage';
-import EditProfilePage from './pages/EditProfilePage';
+// import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
@@ -29,15 +26,12 @@ function App() {
         <Route path='/collection-details/:collectionId/analytics' element={<CollectionDetailsPage/>} />
 
         <Route path='/nft-details/:collectionId/:nftId' element={<NftDetailsPage/>} />
-        <Route path='/blog' element={<BlogPage/>} />
-        <Route path='/edit-post' element={<EditPostPage/>} />
+        {/* <Route path='/blog' element={<BlogPage/>} /> */}
         
         <Route path='/signup' element={<Signup/>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='/profile/:userId' element={<Profile/>} />
-        <Route path='/edit-profile/:userId' element={<EditProfilePage/>} />
       </Routes>
-      <Footer/>
+      <Footer/> 
 
 
 

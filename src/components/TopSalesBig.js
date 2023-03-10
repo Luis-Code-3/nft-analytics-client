@@ -8,18 +8,82 @@ function TopSalesBig() {
 
     //const [currentSales, setCurrentSales] = useState(null);
 
-    const [allSaleThirty, setAllSaleThirty] = useState(null);
-    const [allSaleHour, setAllSaleHour] = useState(null);
-    const [allSaleOneDay, setAllSaleOneDay] = useState(null);
-    const [allSaleThreeDay, setAllSaleThreeDay] = useState(null);
-    const [allSaleSevenDay, setAllSaleSevenDay] = useState(null);
+    const [allSaleData, setAllSaleData] = useState(null);
+    const [currentFrame,setCurrentFrame] = useState('1h');
+
+    // TIME FRAME FUNCTIONS
+
+    const handleThirtyMinutes = () => {
+        axios.get(`${baseUrl}/sales-all-collections/thirtyMinutes`)
+          .then((response) => {
+            //console.log(response.data);
+            setAllSaleData(response.data)
+            setCurrentFrame('30m')
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+  
+      }
+  
+      const handleHour = () => {
+        axios.get(`${baseUrl}/sales-all-collections/hour`)
+          .then((response) => {
+            //console.log(response.data);
+            setAllSaleData(response.data)
+            setCurrentFrame('1h')
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+        
+      }
+  
+      const handleOneDay = () => {
+        axios.get(`${baseUrl}/sales-all-collections/oneDay`)
+          .then((response) => {
+            //console.log(response.data);
+            setAllSaleData(response.data)
+            setCurrentFrame('24h')
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+        
+      }
+  
+      const handleThreeDay = () => {
+        axios.get(`${baseUrl}/sales-all-collections/threeDay`)
+          .then((response) => {
+            //console.log(response.data);
+            setAllSaleData(response.data)
+            setCurrentFrame('3d')
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+        
+      }
+  
+      const handleSevenDay = () => {
+        axios.get(`${baseUrl}/sales-all-collections/sevenDay`)
+          .then((response) => {
+            //console.log(response.data);
+            setAllSaleData(response.data)
+            setCurrentFrame('7d')
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+        
+      }
 
     useEffect(() => {
 
-        if(!allSaleHour) {
+        if(!allSaleData) {
           axios.get(`${baseUrl}/sales-all-collections/hour`)
           .then((response) => {
-            setAllSaleHour(response.data)
+            setAllSaleData(response.data)
           })
           .catch((err) => {
             console.log(err);
@@ -31,12 +95,16 @@ function TopSalesBig() {
 
     return (
       <div className="analyticsBigContainer">
-        <div className="timeBoxBig">
-          <button>30m</button>
-          <button>1h</button>
-          <button>24h</button>
-          <button>3d</button>
-          <button>7d</button>
+        <div className="timeBoxContainer">
+          <div className="timeBoxBig">
+            <button onClick={handleThirtyMinutes}>30m</button>
+            <button onClick={handleHour}>1h</button>
+            <button onClick={handleOneDay}>24h</button>
+            <button onClick={handleThreeDay}>3d</button>
+            <button onClick={handleSevenDay}>7d</button>
+          </div>
+
+          <p>{currentFrame}</p>
         </div>
 
 
@@ -47,9 +115,9 @@ function TopSalesBig() {
           <button className="salesInfoBig transferInfoBig">TRANSFER</button>
         </div>
         {
-          allSaleHour ?
+          allSaleData ?
           <>
-            {allSaleHour.map((sale) => {
+            {allSaleData.map((sale) => {
               return (
                 <Link to={`/nft-details/${sale.collectionAddress}/${sale.tokenId}`} key={sale._id}>
 

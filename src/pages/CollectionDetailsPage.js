@@ -35,11 +35,28 @@ function CollectionDetailsPage() {
             <div className="collectionDetailsContainer">
               <div className="collectionDetailsRow">
                 <div className="collectionDetailsBlockOne">
-                  <h2>Block 1</h2>
+                  <div className="detailsRow">
+                    <img src={collectionDetail.logoUrl} alt="logo"/>
+                    <div className="detailsColumn">
+                      <h2>{collectionDetail.collectionName}</h2>
+                      <h4 className="contractAddress">{collectionDetail.contractAddress}</h4>
+                      <p className="tokenDetailAmount">{collectionDetail.tokenSupply} Circulating Supply</p>
+                    </div>
+                  </div>
+                  <p className="description">{collectionDetail.description}</p>
                 </div>
   
                 <div className="collectionDetailsBlockTwo">
-                  <h2>Block 2</h2>
+                  <p className="collectInfo">Collection Info:</p>
+                  <div className="infoLinksBox">
+                    <a href={collectionDetail.website}>Home</a>
+                    <a href={collectionDetail.etherscan}>Etherscan</a>
+                    <a href={collectionDetail.twitter}>Twitter</a>
+                  </div>
+                  <p className="collectInfo">Marketplaces:</p>
+                  <div className="infoLinksBox">
+                    <a href={collectionDetail.opensea}>OpenSea</a>
+                  </div>
                 </div>
               </div>
   

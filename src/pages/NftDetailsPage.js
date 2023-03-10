@@ -65,7 +65,7 @@ function NftDetailsPage() {
                               <div className="salesPriceBig">
                                 <div className="ethSalePriceBig">
                                     <img className="ethLogo" src={ethLogo} alt="eth logo"/>
-                                    <h2>{tran.salePriceEth}</h2>
+                                    <h2>{tran.salePriceEth.toFixed(2)}</h2>
                                 </div>
                                 <h2 className="usdBig">${tran.salePriceUSD}</h2>
                               </div>

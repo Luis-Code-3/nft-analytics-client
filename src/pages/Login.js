@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffec, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
+import { post } from "../services/authService";
 
 function Login() {
 
@@ -9,6 +11,8 @@ function Login() {
         password: ''
     })
 
+    const {authenticateUser} = useContext(AuthContext);
+
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -16,19 +20,19 @@ function Login() {
     }
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // axios.post('ROUTE',thisUser)
-        //     .then((results) => {
-        //         console.log(results.data);
-        //         navigate(`/`);
-        //         localStorage.setItem('authToken', results.data.token)
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //     })
-        //     .finally(() => {
-        //         authenticateUser();
-        //     })
+        e.preventDefault();
+        post(`/users/login`,thisUser)
+            .then((results) => {
+                console.log(results.data);
+                navigate(`/`);
+                localStorage.setItem('authToken', results.data.token)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+            .finally(() => {
+                authenticateUser();
+            })
     }
 
     return (
